@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Portfolio | Cream 🎀</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background: #fff0f3;
+    color: #76283e;
+}
+
+/* Background */
+
+body::before {
+    content: "🎀";
+    position: fixed;
+    font-size: 100px;
+    top: 20px;
+    left: 20px;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+body::after {
+    content: "🎀";
+    position: fixed;
+    font-size: 100px;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+/* Navigation */
+
+nav {
+    background: #b83250;
+    padding: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffd6df;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(
+        135deg,
+        #f6a6b8,
+        #c43b5c,
+        #8f2341
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(255,255,255,0.15);
+    padding: 40px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 30px;
+    max-width: 650px;
+    backdrop-filter: blur(8px);
+}
+
+.hero h1 {
+    font-family: 'Itim', cursive;
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 2;
+}
+
+.profile {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 6px solid white;
+    object-fit: cover;
+    background: #ffe0e8;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: white;
+    color: #b83250;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* Section */
+
+section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Itim', cursive;
+    font-size: 40px;
+    color: #b83250;
+    margin-bottom: 35px;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
+/* Cards */
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px #d98b9e33;
+    margin: 15px;
+    transition: 0.3s;
+    border: 1px solid #ffd0dc;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info {
+    background: #fff0f3;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.info span {
+    color: #b83250;
+    font-weight: 600;
+}
+
+/* GPA */
+
+.gpa {
+    background: linear-gradient(135deg,#b83250,#e77b96);
+    color: white;
+    padding: 40px;
+    border-radius: 25px;
+    display: inline-block;
+    min-width: 250px;
+}
+
+.gpa h2 {
+    font-size: 65px;
+}
+
+/* Achievement */
+
+.award {
+    font-size: 65px;
+}
+
+.award-text {
+    line-height: 2;
+}
+
+/* Hobbies */
+
+.hobby-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hobby {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    width: 220px;
+    box-shadow: 0 5px 15px #d98b9e33;
+}
+
+.hobby .emoji {
+    font-size: 50px;
+}
+
+/* Footer */
+
+footer {
+    background: #9e2948;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    line-height: 2;
+}
+
+/* Mobile */
+
+@media(max-width:600px) {
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-content {
+        padding: 25px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 11px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#works">WORKS</a>
+    <a href="#hobby">HOBBIES</a>
+</nav>
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div style="font-size:45px;">🎀</div>
+
+        <!-- เปลี่ยน profile.jpg เป็นรูปของตัวเอง -->
+
+        <img src="profile.jpg" class="profile"
+        alt="รูปโปรไฟล์">
+
+        <p>MY PORTFOLIO</p>
+
+        <h1>Nice to meet you!</h1>
+
+        <h2>นางสาว ณิชาภัทร ชูเงิน</h2>
+
+        <p>
+            ชื่อเล่น : ครีม <br>
+            นักเรียนชั้นมัธยมศึกษาปีที่ 6 <br>
+            สายศิลป์ภาษาจีน
+        </p>
+
+        <a href="#about" class="button">
+            LET'S EXPLORE ♡
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h1 class="title">🎀 About Me 🎀</h1>
+
+        <div class="card">
+
+            <h2>ประวัติส่วนตัว</h2>
+
+            <br>
+
+            <div class="info-grid">
+
+                <div class="info">
+                    <span>ชื่อ-นามสกุล</span>
+                    <p>นางสาว ณิชาภัทร ชูเงิน</p>
+                </div>
+
+                <div class="info">
+                    <span>ชื่อเล่น</span>
+                    <p>ครีม</p>
+                </div>
+
+                <div class="info">
+                    <span>ระดับชั้น</span>
+                    <p>มัธยมศึกษาปีที่ 6</p>
+                </div>
+
+                <div class="info">
+                    <span>แผนการเรียน</span>
+                    <p>ศิลป์ภาษาจีน</p>
+                </div>
+
+                <div class="info">
+                    <span>โรงเรียน</span>
+                    <p>ทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</p>
+                </div>
+
+                <div class="info">
+                    <span>ความใฝ่ฝัน</span>
+                    <p>คุณครูศิลปะ</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <h1 class="title">♡ Education ♡</h1>
+
+        <div class="card">
+
+            <div style="font-size:60px;">🏫</div>
+
+            <h2>ประวัติการศึกษา</h2>
+
+            <br>
+
+            <h3>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์รัชมังคลาภิเษก</h3>
+
+            <p>ระดับมัธยมศึกษาตอนปลาย</p>
+
+            <p>แผนการเรียนศิลป์ภาษาจีน</p>
+
+            <br>
+
+            <p>กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GPA -->
+
+<section>
+
+    <div class="container">
+
+        <h1 class="title">♡ My GPAX ♡</h1>
+
+        <div class="gpa">
+
+            <p>GRADE POINT AVERAGE</p>
+
+            <h2>3.33</h2>
+
+            <p>เกรดเฉลี่ยสะสม</p>
+
+            <div style="font-size:35px;">🎀</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WORKS -->
+
+<section id="works">
+
+    <div class="container">
+
+        <h1 class="title">🏆 My Achievement</h1>
+
+        <div class="card">
+
+            <div class="award">🥈</div>
+
+            <h2>ผลงานและความภาคภูมิใจ</h2>
+
+            <br>
+
+            <div class="award-text">
+
+                <h3>การแข่งขันวิชาการ</h3>
+
+                <p>ประเภทวิชาศิลปะ</p>
+
+                <h2 style="color:#c43b5c;">
+                    รางวัลรองชนะเลิศอันดับ 2
+                </h2>
+
+                <p>เหรียญเงิน 🥈</p>
+
+                <br>
+
+                <p>
+                    เป็นประสบการณ์ที่ทำให้ได้เรียนรู้
+                    พัฒนาทักษะ และฝึกฝนความสามารถ
+                    ทางด้านศิลปะของตนเอง
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOBBIES -->
+
+<section id="hobby">
+
+    <div class="container">
+
+        <h1 class="title">♡ My Hobbies ♡</h1>
+
+        <div class="hobby-grid">
+
+            <div class="hobby">
+
+                <div class="emoji">✍🏻</div>
+
+                <h3>แต่งนิยาย</h3>
+
+                <p>สร้างสรรค์เรื่องราวและจินตนาการผ่านตัวอักษร</p>
+
+            </div>
+
+            <div class="hobby">
+
+                <div class="emoji">🎨</div>
+
+                <h3>วาดภาพ</h3>
+
+                <p>ถ่ายทอดความคิดและความรู้สึกผ่านงานศิลปะ</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DREAM -->
+
+<section>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div style="font-size:55px;">🌷</div>
+
+            <h1 class="title">My Dream</h1>
+
+            <h2>ความใฝ่ฝันในอนาคต</h2>
+
+            <br>
+
+            <p>
+                ฉันมีความสนใจในด้านศิลปะ
+                และมีความตั้งใจที่จะพัฒนาความสามารถ
+                ของตนเองอย่างต่อเนื่อง
+            </p>
+
+            <p>
+                ความฝันของฉันคือการได้เป็นคุณครูศิลปะ
+                เพื่อถ่ายทอดความรู้ ความคิดสร้างสรรค์
+                และแรงบันดาลใจให้กับนักเรียน
+            </p>
+
+            <br>
+
+            <h2 style="color:#c43b5c;">
+                "Art is my passion." 🎀
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>Thank You ♡</h2>
+
+    <p>PORTFOLIO | NICHAPHAT CHOONGERN</p>
+
+    <p>Made with love 🎀</p>
+
+</footer>
+
+</body>
+</html>
